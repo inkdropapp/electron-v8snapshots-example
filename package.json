@@ -5,13 +5,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron app",
-    "generave-v8-snapshots": "node ./tools/create-v8-snapshots.js"
+    "generave-v8-snapshots": "node ./tools/create-v8-snapshots.js",
+    "copy-v8-snapshots": "node tools/copy-snapshot-bin-to-electron.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "electron": "^9.2.0",
+    "electron": "9.2.0",
     "electron-link": "^0.4.3",
     "electron-mksnapshot": "^9.0.2"
   },

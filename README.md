@@ -2,6 +2,8 @@
 
 Generate a custom v8 snapshots using [electron-link](https://github.com/atom/electron-link) and [mksnapshot](https://github.com/electron/mksnapshot).
 
+Read [the blog article](https://blog.inkdrop.info/how-to-make-your-electron-app-launch-1000ms-faster-32ce1e0bb52c) for detail.
+
 ## How to install
 
 ```sh

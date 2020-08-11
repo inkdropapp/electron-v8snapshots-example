@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron app",
-    "generave-v8-snapshots": "node ./tools/create-v8-snapshots.js",
+    "generate-v8-snapshots": "node ./tools/create-v8-snapshots.js",
     "copy-v8-snapshots": "node tools/copy-snapshot-bin-to-electron.js"
   },
   "keywords": [],

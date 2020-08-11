@@ -2,6 +2,12 @@
 
 Generate a custom v8 snapshots using [electron-link](https://github.com/atom/electron-link) and [mksnapshot](https://github.com/electron/mksnapshot).
 
+## How to install
+
+```sh
+ELECTRON_CUSTOM_VERSION=9.2.0 npm install
+```
+
 ## How it works
 
 ### Generate v8 snapshots
@@ -9,7 +15,7 @@ Generate a custom v8 snapshots using [electron-link](https://github.com/atom/ele
 Run the following command:
 
 ```sh
-npm run generave-v8-snapshots
+npm run generate-v8-snapshots
 ```
 
 It generates v8 snapshots containing `react` and `react-dom` libraries from `<PROJECT_DIR>/snapshot.js`.

@@ -12,9 +12,9 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "electron": "9.2.0",
-    "electron-link": "^0.4.3",
-    "electron-mksnapshot": "^9.0.2"
+    "electron": "^13.0.1",
+    "electron-link": "^0.6.0",
+    "electron-mksnapshot": "^13.0.0"
   },
   "dependencies": {
     "react": "^16.13.1",

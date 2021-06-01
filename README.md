@@ -7,7 +7,7 @@ Read [the blog article](https://blog.inkdrop.info/how-to-make-your-electron-app-
 ## How to install
 
 ```sh
-ELECTRON_CUSTOM_VERSION=9.2.0 npm install
+ELECTRON_CUSTOM_VERSION=13.0.1 npm install
 ```
 
 ## How it works
@@ -29,7 +29,7 @@ You should get `v8_context_snapshot.bin` in the project directory.
 npm run copy-v8-snapshots
 ```
 
-It copies `v8_context_snapshot.bin` file to the Electron's binary.
+It copies `snapshot_blob.bin` and `v8_context_snapshot.bin` files to the Electron's binary.
 
 ### Start the Electron app
 

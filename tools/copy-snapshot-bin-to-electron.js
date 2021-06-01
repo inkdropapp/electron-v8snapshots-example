@@ -1,8 +1,10 @@
 const path = require('path')
 const fs = require('fs')
 
-const baseDirPath = path.resolve(__dirname, '..')
-const pathToBlob = path.join(baseDirPath, 'v8_context_snapshot.bin')
+const snapshotFileName = 'snapshot_blob.bin'
+const v8ContextFileName = getV8ContextFileName()
+const pathToBlob = path.resolve(__dirname, '..', snapshotFileName)
+const pathToBlobV8 = path.resolve(__dirname, '..', v8ContextFileName)
 
 switch (process.platform) {
   case 'darwin': {
@@ -11,7 +13,9 @@ switch (process.platform) {
       '..',
       'node_modules/electron/dist/Electron.app/Contents/Frameworks/Electron Framework.framework/Versions/A/Resources'
     )
-    fs.copyFileSync(pathToBlob, path.join(pathToElectron, 'v8_context_snapshot.bin'))
+    console.log('Copying v8 snapshots from', pathToBlob, 'to', pathToElectron)
+    fs.copyFileSync(pathToBlob, path.join(pathToElectron, snapshotFileName))
+    fs.copyFileSync(pathToBlobV8, path.join(pathToElectron, v8ContextFileName))
     break
   }
   case 'win32':
@@ -23,7 +27,19 @@ switch (process.platform) {
       'electron',
       'dist'
     )
-    fs.copyFileSync(pathToBlob, path.join(pathToElectron, 'v8_context_snapshot.bin'))
+    console.log('Copying v8 snapshots from', pathToBlob, 'to', pathToElectron)
+    fs.copyFileSync(pathToBlob, path.join(pathToElectron, snapshotFileName))
+    fs.copyFileSync(pathToBlobV8, path.join(pathToElectron, v8ContextFileName))
     break
+  }
+}
+
+function getV8ContextFileName() {
+  if (process.platform === 'darwin') {
+    return `v8_context_snapshot${
+      process.arch.startsWith('arm') ? '.arm64' : '.x86_64'
+    }.bin`
+  } else {
+    return `v8_context_snapshot.bin`
   }
 }

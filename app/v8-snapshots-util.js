@@ -1,6 +1,5 @@
 const path = require('path')
 
-console.log('snapshotResult:', snapshotResult)
 if (typeof snapshotResult !== 'undefined') {
   console.log('snapshotResult available!', snapshotResult)
 
